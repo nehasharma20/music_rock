@@ -1,16 +1,55 @@
-# music_rock
+# 🎵 Music Rock – Music Services Module (Single Screen)
 
-A new Flutter project.
+This mini Flutter project demonstrates a **responsive UI** that fetches and displays a list of music services from **Firebase Firestore**, following the **MVVM architecture** with **Provider** for state management and **GetIt** (optional) for dependency injection.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 📱 Screens
 
-A few resources to get you started if this is your first Flutter project:
+### ✅ Home Screen
+- Dynamically displays a list of music services.
+- Each service card includes:
+  - Icon (can be asset or system icon)
+  - Title
+  - Short description
+- Tapping a card navigates to a detail screen showing:
+  > “You tapped on: `<Service Title>`”
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🔧 Features
+
+- ✨ Responsive UI using Flutter
+- 📦 Firebase Firestore integration (read-only)
+- 🧠 MVVM architecture
+- ✅ State management using Provider
+- 💉 Dependency Injection via GetIt (optional/bonus)
+- 🚀 Navigation on tap
+- ⚠️ Null-safe and error-handled data fetching
+
+---
+
+## 📂 Project Structure
+
+```plaintext
+lib/
+│
+├── core/
+│   └── models/
+│       └── music_service_model.dart        # Model class for music services
+│
+├── data/
+│   └── repository/
+│       └── music_service_repository.dart   # Firestore read logic
+│
+├── view/
+│   └── screens/
+│       ├── home_screen.dart                # Home UI with service list
+│       └── detail_screen.dart              # Tapped service detail
+│   └── widgets/
+│       └── service_card.dart               # Reusable card widget
+│
+├── view_model/
+│   └── service_view_model.dart             # ViewModel for service list
+│
+├── main.dart                               # App entry point, Provider setup
