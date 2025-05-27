@@ -1,20 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
-import 'view_model/music_service_view_model.dart';
 import 'view/screens/home_screen.dart';
-import 'firebase_options.dart';
+import 'view_model/music_service_view_model.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-
+void main() {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(
-          create: (_) => MusicServiceViewModel()..fetchServices(),
-        ),
+        ChangeNotifierProvider(create: (_) => MusicServiceViewModel()..fetchServices()),
       ],
       child: const MyApp(),
     ),
@@ -27,10 +20,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Music Rock',
-      theme: ThemeData(primarySwatch: Colors.purple),
-      home: const HomeScreen(),
       debugShowCheckedModeBanner: false,
+      title: 'Music Rock',
+      theme: ThemeData.dark(),
+      home: const HomeScreen(),
     );
   }
 }

@@ -1,24 +1,15 @@
 import 'package:flutter/material.dart';
-import '../core/models/music_service_model.dart';
+import '../data/model/music_service.dart';
 import '../data/repository/music_service_repository.dart';
 
 class MusicServiceViewModel extends ChangeNotifier {
-  final _repository = MusicServiceRepository();
+  final _repo = MusicServiceRepository();
 
-  List<MusicService> services = [];
-  bool isLoading = true;
+  List<MusicService> _services = [];
+  List<MusicService> get services => _services;
 
-  Future<void> fetchServices() async {
-    isLoading = true;
-    notifyListeners();
-
-    try {
-      services = await _repository.fetchMusicServices();
-    } catch (e) {
-      services = [];
-    }
-
-    isLoading = false;
+  void fetchServices() {
+    _services = _repo.fetchServices();
     notifyListeners();
   }
 }

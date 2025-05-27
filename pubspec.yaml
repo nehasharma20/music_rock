@@ -72,6 +72,12 @@ flutter:
     - assets/icons/music_production.png
     - assets/icons/vocals.png
     - assets/icons/lyrics_writing.png
+    - assets/images/lyrics.jpg
+    - assets/images/mix.jpg
+    - assets/images/music.jpg
+    - assets/images/vocals.jpg
+
+
 
 
 
