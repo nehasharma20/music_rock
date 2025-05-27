@@ -33,23 +33,19 @@ This mini Flutter project demonstrates a **responsive UI** that fetches and disp
 
 ```plaintext
 lib/
-│
 ├── core/
 │   └── models/
-│       └── music_service_model.dart        # Model class for music services
-│
+│       └── music_service_model.dart
 ├── data/
 │   └── repository/
-│       └── music_service_repository.dart   # Firestore read logic
-│
-├── view/
-│   └── screens/
-│       ├── home_screen.dart                # Home UI with service list
-│       └── detail_screen.dart              # Tapped service detail
-│   └── widgets/
-│       └── service_card.dart               # Reusable card widget
-│
+│       └── music_service_repository.dart
 ├── view_model/
-│   └── service_view_model.dart             # ViewModel for service list
-│
-├── main.dart                               # App entry point, Provider setup
+│   └── music_service_view_model.dart
+├── view/
+│   ├── screens/
+│   │   └── home_screen.dart
+│   └── widgets/
+│       └── music_service_card.dart
+├── firebase_options.dart
+├── main.dart
+
