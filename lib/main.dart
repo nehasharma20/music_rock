@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Music Rocks',
+      title: 'Music Rock',
       theme: ThemeData.dark(),
       home: const HomeScreen(),
     );
