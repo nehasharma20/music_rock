@@ -32,20 +32,34 @@ This mini Flutter project demonstrates a **responsive UI** that fetches and disp
 ## 📂 Project Structure
 
 ```plaintext
+assets/
+├── icons/
+│   ├── music.png
+│   ├── mix.png
+│   ├── lyrics.png
+│   ├── vocals.png
+├── images/
+│   ├── music_bg.png
+│   ├── mix_bg.png
+│   ├── lyrics_bg.png
+│   ├── vocals_bg.png
 lib/
 ├── core/
-│   └── models/
-│       └── music_service_model.dart
+│   ├── constants/
+│   │   └── app_colors.dart
+│   │   └── app_text_styles.dart
+│   └── widgets/
+│       └── custom_bottom_nav_bar.dart
+│       └── service_card.dart
 ├── data/
+│   └── model/
+│       └── music_service.dart
 │   └── repository/
 │       └── music_service_repository.dart
 ├── view_model/
 │   └── music_service_view_model.dart
 ├── view/
-│   ├── screens/
-│   │   └── home_screen.dart
-│   └── widgets/
-│       └── music_service_card.dart
-├── firebase_options.dart
+│   └── screens/
+│       └── home_screen.dart
 ├── main.dart
-
+└── firebase_options.dart
