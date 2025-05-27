@@ -1,15 +1,19 @@
 class MusicService {
   final String title;
   final String description;
-  final String icon;
+  final String iconPath;
 
-  MusicService({required this.title, required this.description, required this.icon});
+  MusicService({
+    required this.title,
+    required this.description,
+    required this.iconPath,
+  });
 
   factory MusicService.fromJson(Map<String, dynamic> json) {
     return MusicService(
       title: json['title'] ?? '',
       description: json['description'] ?? '',
-      icon: json['icon'] ?? 'music_note',
+      iconPath: json['iconPath'] ?? '',
     );
   }
 }

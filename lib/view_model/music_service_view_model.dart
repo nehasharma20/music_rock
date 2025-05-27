@@ -3,19 +3,22 @@ import '../core/models/music_service_model.dart';
 import '../data/repository/music_service_repository.dart';
 
 class MusicServiceViewModel extends ChangeNotifier {
-  final MusicServiceRepository _repository = MusicServiceRepository();
+  final _repository = MusicServiceRepository();
 
-  List<MusicService> _services = [];
-  List<MusicService> get services => _services;
-
-  bool _isLoading = false;
-  bool get isLoading => _isLoading;
+  List<MusicService> services = [];
+  bool isLoading = true;
 
   Future<void> fetchServices() async {
-    _isLoading = true;
+    isLoading = true;
     notifyListeners();
-    _services = await _repository.fetchMusicServices();
-    _isLoading = false;
+
+    try {
+      services = await _repository.fetchMusicServices();
+    } catch (e) {
+      services = [];
+    }
+
+    isLoading = false;
     notifyListeners();
   }
 }

@@ -4,13 +4,10 @@ import 'package:provider/provider.dart';
 import 'view_model/music_service_view_model.dart';
 import 'view/screens/home_screen.dart';
 import 'firebase_options.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  // ✅ Proper initialization for all platforms
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   runApp(
     MultiProvider(

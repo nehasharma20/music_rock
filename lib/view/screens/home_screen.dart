@@ -1,22 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../view_model/music_service_view_model.dart';
-import '../widgets/music_card.dart';
-import 'detail_screen.dart';
+import '../widgets/music_service_card.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
-
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  @override
-  void initState() {
-    super.initState();
-    Provider.of<MusicServiceViewModel>(context, listen: false).fetchServices();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,21 +20,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 crossAxisCount: 2,
                 crossAxisSpacing: 16,
                 mainAxisSpacing: 16,
+                childAspectRatio: 0.9,
               ),
               itemCount: viewModel.services.length,
               itemBuilder: (context, index) {
                 final service = viewModel.services[index];
-                return MusicCard(
-                  service: service,
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) => DetailScreen(title: service.title),
-                      ),
-                    );
-                  },
-                );
+                return MusicServiceCard(service: service);
               },
             ),
     );
